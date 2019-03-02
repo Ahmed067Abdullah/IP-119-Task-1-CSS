@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab"
+      rel="stylesheet"
+    />
+    <title>Task 1</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="form-container">
+        <p class="nav-item item-1">Login</p>
+        <p class="nav-item item-3">Register</p>
+        <p class="nav-item item-2">Reset</p>
+        <form class="form login-form" onSubmit="return false">
+          <label class="email-label"
+            ><span class="email-label-text">Email</span>
+            <input type="email" placeholder="Email" class="input email-field" />
+          </label>
+          <label class="password-label">
+            <span class="password-label-text">Password</span>
+            <input
+              type="password"
+              placeholder="Password"
+              class="input password-field"
+            />
+          </label>
+          <button type="submit" class="input btn submit-btn">Sign in</button>
+        </form>
+        <form class="form register-form" onSubmit="return false">
+          <label class="email-label"
+            ><span class="email-label-text">Email</span>
+            <input type="email" placeholder="Email" class="input email-field" />
+          </label>
+          <label class="password-label">
+            <span class="password-label-text">Password</span>
+            <input
+              type="password"
+              placeholder="Password"
+              class="input password-field"
+            />
+          </label>
+          <button type="submit" class="input btn submit-btn">Register</button>
+        </form>
+        <form class="form reset-form" onSubmit="return false">
+          <label class="email-label"
+            ><span class="email-label-text">Email</span>
+            <input type="email" placeholder="Email" class="input email-field"
+          /></label>
+          <button type="submit" class="input btn submit-btn">Reset</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
