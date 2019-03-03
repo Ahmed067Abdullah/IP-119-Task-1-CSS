@@ -25,29 +25,26 @@ body {
   height: 120px;
 }
 
-.form {
-  display: flex;
-  position: absolute;
-  left: -100%;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  transition: all 1.2s cubic-bezier(0.21, -0.5, 0.52, 1.4);
-}
-
-.login-form {
-  left: 20%;
-}
-
 @keyframes move {
   50% {
     box-shadow: 3px 3px 8px #374f6b;
   }
 }
 
-.input::placeholder {
-  font-family: "Roboto Slab", serif;
-  opacity: 0;
+.form {
+  display: flex;
+  position: absolute;
+  left: -170%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 1.3s cubic-bezier(0.21, -0.5, 0.52, 1.4);
+}
+
+.login-form {
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .nav-item {
@@ -62,6 +59,12 @@ body {
   text-decoration: underline;
 }
 
+.nav-item:hover {
+  font-weight: bold;
+  font-size: 21px;
+  text-decoration: none;
+}
+
 .item-1 {
   left: 35%;
 }
@@ -72,41 +75,38 @@ body {
   left: 66%;
 }
 
-.nav-item:hover {
-  font-weight: bold;
-  font-size: 21px;
-  text-decoration: none;
-}
-
 /* show reset and hide rest */
 .item-2:hover ~ .reset-form {
-  left: 20%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .item-2:hover ~ .login-form {
-  left: -100%;
-}
-
-.item-2:hover ~ .login-form {
-  left: -100%;
+  left: -170%;
 }
 
 /* show register and hide rest */
 .item-3:hover ~ .register-form {
-  left: 20%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .item-3:hover ~ .login-form {
-  left: -100%;
-}
-
-.item-3:hover ~ .reset-form {
-  left: -100%;
+  left: -170%;
 }
 
 label {
   display: block;
   font-size: 22px;
+}
+
+input {
+  border-radius: 10px;
+  margin: 10px 0;
+  height: 28px;
+  font-size: 21px;
 }
 
 .input {
@@ -116,11 +116,21 @@ label {
   transition: all 0.45s linear;
 }
 
-input {
-  border-radius: 10px;
-  margin: 10px 0;
-  height: 28px;
-  font-size: 21px;
+.input::placeholder {
+  font-family: "Roboto Slab", serif;
+  opacity: 0;
+}
+
+.input:hover {
+  outline: none;
+  border: 1.5px solid #2f4259;
+  transform: translateZ(14px);
+}
+
+.input:focus {
+  outline: none;
+  border: 1.5px solid #2f4259;
+  transform: translateZ(28px);
 }
 
 .email-field {
@@ -131,26 +141,21 @@ input {
   margin-left: 4px;
 }
 
-.fas { 
+/* font awesome icons start*/
+.fas {
   position: absolute;
   visibility: hidden;
 }
 
-.fa-envelope{
+.fa-envelope {
   top: 16px;
   left: 123px;
 }
-.fa-key{
+.fa-key {
   top: 70px;
   left: 123px;
 }
-
-.input:focus,
-.input:hover {
-  outline: none;
-  border: 1.5px solid #2f4259;
-  transform: translateZ(20px);
-}
+/* font awesome icons end*/
 
 button {
   border-radius: 10px;
@@ -169,35 +174,32 @@ button:active {
   box-shadow: 3px 3px black;
 }
 
-.btn {
-  width: 260px;
-}
-
 button:hover {
   background: linear-gradient(to left, #37506b, #77859a);
+}
+
+.btn {
+  width: 260px;
 }
 
 @media (max-width: 700px) {
   .main-container {
     width: 80%;
   }
-  .login-form {
-    left: 15%;
-  }
-  .input {
-    width: 240px;
-  }
   input {
     margin: 8px 0;
     height: 20px;
     font-size: 18px;
   }
-  .email-field {
-    margin-left: 36px;
+  .input {
+    width: 240px;
   }
   .email-label,
   .password-label {
     font-size: 18px;
+  }
+  .email-field {
+    margin-left: 36px;
   }
   button {
     margin-left: 90px;
@@ -208,9 +210,6 @@ button:hover {
 }
 
 @media (max-width: 600px) {
-  .login-form {
-    left: 9%;
-  }
   .item-1 {
     left: 25%;
   }
@@ -220,6 +219,13 @@ button:hover {
   .item-2 {
     left: 65%;
   }
+  .input {
+    font-size: 16px;
+  }
+  .email-label,
+  .password-label {
+    font-size: 16px;
+  }
   .email-field,
   .password-field {
     margin: 10px;
@@ -228,21 +234,18 @@ button:hover {
   .email-field {
     margin-left: 36px;
   }
-  .email-label,
-  .password-label {
-    font-size: 16px;
-  }
   button {
     margin-left: 77px;
-  }
-  .input {
-    font-size: 16px;
   }
 }
 
 @media (max-width: 490px) {
-  .login-form {
-    left: 22%;
+  .main-container {
+    width: 90%;
+  }
+  .form-container {
+    box-shadow: none;
+    animation: none;
   }
   .item-1 {
     left: 12%;
@@ -253,12 +256,8 @@ button:hover {
   .item-2 {
     left: 65%;
   }
-  .main-container {
-    width: 90%;
-  }
-  .form-container {
-    box-shadow: none;
-    animation: none;
+  .input {
+    font-size: 18px;
   }
   .input::placeholder {
     opacity: 1;
@@ -267,44 +266,35 @@ button:hover {
   .password-label {
     display: none;
   }
-  .email-field,
-  .password-field,
-  .btn {
-    width: 200px;
-    margin-left: 0px;
-    height: 25px;
-  }
-  .email-field,
-  .password-field
-   {
-    padding-left: 40px;
-  }
-  .btn {
-    margin-left: -15px;
-    height: 35px;
-  }
-  .input {
-    font-size: 18px;
-  }
-
-  .fas { 
+  .fas {
     position: absolute;
     visibility: visible;
     z-index: 2;
   }
-  
-  .fa-envelope{
-    top: 16px;
+  .fa-envelope {
+    top: 15px;
     left: 10px;
   }
-  .fa-key{
-    top: 70px;
+  .fa-key {
+    top: 15px;
     left: 10px;
   }
-}
-
-@media (max-width: 400px) {
-  .login-form {
-    left: 10%;
+  .email-container,
+  .password-container {
+    width: 200px;
+    margin-left: -13%;
+    position: relative;
+  }
+  .email-field,
+  .password-field {
+    padding-left: 40px;
+    width: 100%;
+    margin-left: 0px;
+    height: 25px;
+  }
+  .btn {
+    width: 200px;
+    margin-left: -5px;
+    height: 35px;
   }
 }
