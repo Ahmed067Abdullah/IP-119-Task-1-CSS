@@ -23,41 +23,42 @@
         <p class="nav-item item-1">Login</p>
         <p class="nav-item item-3">Register</p>
         <p class="nav-item item-2">Reset</p>
+        
         <form class="form login-form" onSubmit="return false">
-          <label class="email-label"
-            ><span class="email-label-text">Email</span>
-            <input type="email" placeholder="Email" class="input email-field" />
+          <label class="email-container">
+            <span class="email-label">Email</span>
+            <span>
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" class="input email-field" />
+            </span>
           </label>
-          <label class="password-label">
-            <span class="password-label-text">Password</span>
-            <input
-              type="password"
-              placeholder="Password"
-              class="input password-field"
-            />
+          <label class="password-container">
+            <span class="password-label">Password</span>
+            <span>
+                <i class="fas fa-key"></i>
+                <input type="password" placeholder="Password" class="input password-field"/>
+            </span>
           </label>
           <button type="submit" class="input btn submit-btn">Sign in</button>
         </form>
+        
         <form class="form register-form" onSubmit="return false">
-          <label class="email-label"
-            ><span class="email-label-text">Email</span>
+          <label class="email-container">
+            <span class="email-label">Email</span>
             <input type="email" placeholder="Email" class="input email-field" />
           </label>
-          <label class="password-label">
-            <span class="password-label-text">Password</span>
-            <input
-              type="password"
-              placeholder="Password"
-              class="input password-field"
-            />
+          <label class="password-container">
+            <span class="password-label">Password</span>
+            <input type="password" placeholder="Password" class="input password-field"/>
           </label>
           <button type="submit" class="input btn submit-btn">Register</button>
         </form>
+
         <form class="form reset-form" onSubmit="return false">
-          <label class="email-label"
-            ><span class="email-label-text">Email</span>
-            <input type="email" placeholder="Email" class="input email-field"
-          /></label>
+          <label class="email-container">
+            <span class="email-label">Email</span>
+            <input type="email" placeholder="Email" class="input email-field"/>
+          </label>
           <button type="submit" class="input btn submit-btn">Reset</button>
         </form>
       </div>

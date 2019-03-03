@@ -32,17 +32,11 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  transition: all 1.2s cubic-bezier(.21,-.5,.52,1.4);
+  transition: all 1.2s cubic-bezier(0.21, -0.5, 0.52, 1.4);
 }
 
 .login-form {
   left: 20%;
-}
-
-.reset-form {
-}
-
-.register-form {
 }
 
 @keyframes move {
@@ -52,10 +46,12 @@ body {
 }
 
 .input::placeholder {
+  font-family: "Roboto Slab", serif;
   opacity: 0;
 }
 
 .nav-item {
+  top: 5%;
   display: inline-block;
   position: absolute;
   margin-right: 10px;
@@ -67,15 +63,12 @@ body {
 }
 
 .item-1 {
-  top: 5%;
   left: 35%;
 }
 .item-3 {
-  top: 5%;
   left: 49%;
 }
 .item-2 {
-  top: 5%;
   left: 66%;
 }
 
@@ -85,8 +78,8 @@ body {
   text-decoration: none;
 }
 
+/* show reset and hide rest */
 .item-2:hover ~ .reset-form {
-  /* display: flex; */
   left: 20%;
 }
 
@@ -94,8 +87,12 @@ body {
   left: -100%;
 }
 
+.item-2:hover ~ .login-form {
+  left: -100%;
+}
+
+/* show register and hide rest */
 .item-3:hover ~ .register-form {
-  /* display: flex; */
   left: 20%;
 }
 
@@ -128,13 +125,24 @@ input {
 
 .email-field {
   margin-left: 42px;
-  /* background-image: url('email.png');
-  background-position: 7px 7px;
-  background-repeat: no-repeat; */
 }
 
 .password-field {
   margin-left: 4px;
+}
+
+.fas { 
+  position: absolute;
+  visibility: hidden;
+}
+
+.fa-envelope{
+  top: 16px;
+  left: 123px;
+}
+.fa-key{
+  top: 70px;
+  left: 123px;
 }
 
 .input:focus,
@@ -146,14 +154,11 @@ input {
 
 button {
   border-radius: 10px;
-  width: 230px;
   height: 36px;
   margin-left: 110px;
   margin-top: 10px;
   color: white;
   background: #77859a;
-  background: -webkit-linear-gradient(right, #77859a, #37506b);
-  background: -moz-linear-gradient(right, #77859a, #37506b);
   background: linear-gradient(to left, #77859a, #37506b);
   box-shadow: 8px 8px #576a82;
   transition: all 0.3s ease-in;
@@ -169,18 +174,11 @@ button:active {
 }
 
 button:hover {
-  background: -webkit-linear-gradient(right, #37506b, #77859a);
-  background: -moz-linear-gradient(right, #37506b, #77859a);
   background: linear-gradient(to left, #37506b, #77859a);
-}
-
-button:hover button::before {
-  content: "Hello";
 }
 
 @media (max-width: 700px) {
   .main-container {
-    margin: 40px auto;
     width: 80%;
   }
   .login-form {
@@ -188,9 +186,6 @@ button:hover button::before {
   }
   .input {
     width: 240px;
-    padding: 4px;
-    border: 1px solid #374f6b;
-    transition: all 0.45s linear;
   }
   input {
     margin: 8px 0;
@@ -200,15 +195,12 @@ button:hover button::before {
   .email-field {
     margin-left: 36px;
   }
-  .email-label-text,
-  .password-label-text {
+  .email-label,
+  .password-label {
     font-size: 18px;
   }
   button {
-    height: 36px;
     margin-left: 90px;
-    margin-top: 10px;
-    font-size: 16px;
   }
   .btn {
     width: 240px;
@@ -236,26 +228,16 @@ button:hover button::before {
   .email-field {
     margin-left: 36px;
   }
-  .email-label-text,
-  .password-label-text {
+  .email-label,
+  .password-label {
     font-size: 16px;
-  }
-  .btn {
-    width: 240px;
   }
   button {
-    border-radius: 10px;
-    height: 36px;
     margin-left: 77px;
-    margin-top: 10px;
-    font-size: 16px;
   }
   .input {
     font-size: 16px;
   }
-  /* .btn{
-      width : 280px;
-  } */
 }
 
 @media (max-width: 490px) {
@@ -272,7 +254,6 @@ button:hover button::before {
     left: 65%;
   }
   .main-container {
-    margin: 10px auto;
     width: 90%;
   }
   .form-container {
@@ -282,16 +263,21 @@ button:hover button::before {
   .input::placeholder {
     opacity: 1;
   }
-  .email-label-text,
-  .password-label-text {
+  .email-label,
+  .password-label {
     display: none;
   }
   .email-field,
   .password-field,
   .btn {
-    width: 240px;
+    width: 200px;
     margin-left: 0px;
     height: 25px;
+  }
+  .email-field,
+  .password-field
+   {
+    padding-left: 40px;
   }
   .btn {
     margin-left: -15px;
@@ -299,13 +285,25 @@ button:hover button::before {
   }
   .input {
     font-size: 18px;
-    padding: 4px;
-    border: 1px solid #374f6b;
-    transition: all 0.45s linear;
+  }
+
+  .fas { 
+    position: absolute;
+    visibility: visible;
+    z-index: 2;
+  }
+  
+  .fa-envelope{
+    top: 16px;
+    left: 10px;
+  }
+  .fa-key{
+    top: 70px;
+    left: 10px;
   }
 }
 
-@media (max-width :400px){
+@media (max-width: 400px) {
   .login-form {
     left: 10%;
   }
