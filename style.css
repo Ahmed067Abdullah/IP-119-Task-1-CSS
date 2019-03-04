@@ -25,12 +25,6 @@ body {
   height: 120px;
 }
 
-@keyframes move {
-  50% {
-    box-shadow: 3px 3px 8px #374f6b;
-  }
-}
-
 .form {
   display: flex;
   position: absolute;
@@ -296,5 +290,11 @@ button:hover {
     width: 200px;
     margin-left: -5px;
     height: 35px;
+  }
+}
+
+@keyframes move {
+  50% {
+    box-shadow: 3px 3px 8px #374f6b;
   }
 }
